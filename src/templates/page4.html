@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ doc_id }} dokumentacija</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "Arial", "sans-serif"] },
+          },
+        },
+      };
+    </script>
+    <style>
+      @media print {
+        a[href]:after {
+          content: "";
+        }
+        .no-print {
+          display: none !important;
+        }
+        .page-break {
+          page-break-after: always;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans text-sm text-gray-800 leading-relaxed bg-white p-6 md:p-10"
+  >
+    <header class="mb-8">
+      <div class="flex justify-between">
+        <div>
+          <p class="font-semibold tracking-tight mb-2">UAB Testinam</p>
+          <p class="-mt-2">Vilnius, lietuva</p>
+          <p class="mt-1">4 priedas</p>
+        </div>
+        <p>AB EN</p>
+      </div>
+    </header>
+
+    <section class="mb-8">
+      <div class="mb-4">
+        <h2 class="text-md font-bold text-center">
+          ĮŽEMINTUVŲ ATSTOJAMŲJŲ VARŽŲ MATAVIMO IR GRANDINĖS NUO ĮŽEMINTUVŲ IKI
+          ĮŽEMINAMŲ ELEMENTŲ TIKRINIMO IR APŽIŪROS PROTOKOLAS Nr.
+        </h2>
+
+        <div class="flex items-center gap-2 mt-4">
+          <label class="text-sm shrink-0">Objektas:</label>
+          <div class="relative w-full">
+            <p class="text-sm text-blue-700">
+              Vilniaus g. Kaunas, Lietuva, E2327272
+            </p>
+            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          </div>
+        </div>
+
+        <p class="text-sm font-semibold text-center mt-2">
+          Įžemintuvų varžos matavimas
+        </p>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-2 mt-2">
+          <label class="text-sm shrink-0">
+            Matavimo\apžiūros atlikimo data:</label
+          >
+          <div class="relative w-full">
+            <p class="text-sm text-blue-700">4/17/25</p>
+            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2 mt-2">
+          <label class="text-sm shrink-0">
+            Gruntas ir jo būklė matavimo metu:</label
+          >
+          <div class="relative w-full">
+            <p class="text-sm text-blue-700">drėgnas</p>
+            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2 mt-2">
+          <label class="text-sm shrink-0">
+            Savitoji ekvivalentinė grunto varža ρ:
+          </label>
+          <div class="relative w-full">
+            <p class="text-sm text-blue-700">drėgnas</p>
+            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2 mt-2">
+          <label class="text-sm shrink-0">
+            Matavimo prietaiso pavadinimas ir numeris:
+          </label>
+          <div class="relative w-full">
+            <p class="text-sm text-blue-700">drėgnas</p>
+            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2 mt-2">
+          <label class="text-sm shrink-0">
+            Matavimo prietaiso metrologinė patikra galioja :
+          </label>
+          <div class="relative w-full">
+            <p class="text-sm text-blue-700">drėgnas</p>
+            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="overflow-x-auto shadow ring-1 ring-gray-200 mb-6 mt-6">
+      <table class="min-w-full border-collapse border border-gray-300 text-sm">
+        <thead class="bg-gray-300">
+          <tr>
+            <th rowspan="2" class="border border-gray-700 p-2 font-[300]">
+              Eil. Nr.
+            </th>
+            <th rowspan="2" class="border border-gray-700 p-2 font-[300]">
+              Matuojamas ruožas
+            </th>
+            <th rowspan="2" class="border border-gray-700 p-2 font-[300]">
+              Matavimo atsivimo vieta
+            </th>
+            <th colspan="2" class="border border-gray-700 p-2 font-[300]">
+              Išeminimo atstamojo varža, Ω
+            </th>
+            <th rowspan="2" class="border border-gray-700 p-2 font-[300]">
+              Išmatuoto ruožo ilgis, m
+            </th>
+            <th rowspan="2" class="border border-gray-700 p-2 font-[300]">
+              Gretimu tašku matavimu rezultatų skirtumas, %
+            </th>
+          </tr>
+          <tr>
+            <th class="border border-gray-700 p-2 font-[300]">išmatuota</th>
+            <th class="border border-gray-700 p-2 font-[300]">norminė</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border border-gray-700 p-2 text-center text-blue-700">
+              1
+            </td>
+            <td class="border border-gray-700 p-2 text-center text-blue-700">
+              100/7 - 100/13
+            </td>
+            <td class="border border-gray-700 p-2 text-center text-blue-700">
+              atr. 100/7
+            </td>
+            <td class="border border-gray-700 p-2 text-center text-blue-700">
+              10
+            </td>
+            <td class="border border-gray-700 p-2 text-center text-blue-700">
+              1
+            </td>
+            <td class="border border-gray-700 p-2 text-center text-blue-700">
+              2
+            </td>
+            <td class="border border-gray-700 p-2 text-center text-blue-700">
+              2
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <div class="flex items-center gap-2">
+        <p class="font-semibold">Pastaba:</p>
+        <span class="text-sm">turi būti bent vienas įžemintas ele</span>
+      </div>
+      <div class="flex items-center gap-2 mt-4">
+        <p class="font-semibold">Išvada:</p>
+        <span class="text-sm">turi būti bent vienas įžemintas ele</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="flex items-center gap-2 mt-4">
+        <label class="text-sm shrink-0">
+          Asmuo, atsakingas už matavimo rezultatus
+        </label>
+        <div class="relative w-full">
+          <p class="text-sm text-blue-700">drėgnas</p>
+          <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2 mt-4">
+        <label class="text-sm shrink-0"> Matavimus\apžiūrą atlik </label>
+        <div class="relative w-full">
+          <p class="text-sm text-blue-700">drėgnas</p>
+          <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

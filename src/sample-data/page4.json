@@ -1,0 +1,50 @@
+{
+  "company": {
+    "name": "UAB Testham",
+    "address": "Vinius, leituva"
+  },
+  "doc_id": "E2327272",
+  "measurement": {
+    "location": "Viniaus g. Kaunas, Lietuva",
+    "date": "2025-04-17",
+    "ground_condition": "drėgnas",
+    "equivalent_ground_resistance": "",
+    "device": {
+      "name": "Metrel Eurotest 27227",
+      "serial": "27227",
+      "calibration_valid_until": "2025-05-17"
+    },
+    "results": [
+      {
+        "purpose_and_location": "KS-27227",
+        "measured_resistance": 9.7,
+        "nominal_resistance": 10,
+        "inspection_result": "nepalėsta"
+      },
+      {
+        "purpose_and_location": "STN-027272",
+        "measured_resistance": 2.4,
+        "nominal_resistance": 2.5,
+        "inspection_result": "nepalėsta"
+      }
+    ],
+    "notes": "Įžeminluvų korozinė elementų būklė oro linjose pasitinkimai tikrinama atkasant gruntą ne mažiau kaip 2 % įžeminų atramų. Šitaip tikrinti neika tas atramas, kurios yra urbanizuotose teritorijose, ir tas vietas, kur yra agresyvas, nupidiamas ar didelės savitolsios varžos gruntas, nuolistaudos. Elementas turi būti palėstias, tai daugiau kaip 50 % je skempjyrio pažeista.",
+    "conclusion": "Įžeminluvų varžos atitinka EIIT ir EETET reikalavimus, išskyrus įžeminluvus, kurių sąrašo Nr.",
+    "responsible_person": {
+      "position": "darbų vadovas",
+      "name": "Jonas Petratis"
+    },
+    "operator": {
+      "position": "darbų vadovas",
+      "name": "Jonas Petratis"
+    }
+  },
+  "annexes": [
+    {
+      "no": 3,
+      "title": "ĮŽEMINTUVŲ VARŽŲ MATAVIMO IR GRANDINĖS NUO ĮŽEMINTUVŲ IKI ĮŽEMINAMŲ ELEMENTŲ TIKRINIMO PROTOKOLAS",
+      "location": "Viniaus g. Kaunas, Lietuva",
+      "code": "E2327272"
+    }
+  ]
+}

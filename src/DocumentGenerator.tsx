@@ -126,7 +126,7 @@ export const DocumentGenerator: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6 space-y-6 mx-auto w-7xl">
-      <h1 className="font-bold">Document Generator</h1>
+      <h1 className="font-semibold">Document Generator</h1>
 
       <Card className="w-full">
         <CardContent className="space-y-4 p-4">
