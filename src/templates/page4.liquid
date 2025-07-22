@@ -52,8 +52,8 @@
         <div class="flex items-center gap-2 mt-4">
           <label class="text-sm shrink-0">Objektas:</label>
           <div class="relative w-full">
-            <p class="text-sm text-blue-700">
-              Vilniaus g. Kaunas, Lietuva, E2327272
+            <p class="text-sm text-blue-700 text-start">
+              {{ objektas }}
             </p>
             <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
           </div>
@@ -70,7 +70,7 @@
             Matavimo\apžiūros atlikimo data:</label
           >
           <div class="relative w-full">
-            <p class="text-sm text-blue-700">4/17/25</p>
+            <p class="text-sm text-blue-700 text-start">{{ matavimo }}</p>
             <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
           </div>
         </div>
@@ -81,7 +81,7 @@
             Gruntas ir jo būklė matavimo metu:</label
           >
           <div class="relative w-full">
-            <p class="text-sm text-blue-700">drėgnas</p>
+            <p class="text-sm text-blue-700 text-start">{{ gruntas }}</p>
             <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
           </div>
         </div>
@@ -92,7 +92,7 @@
             Savitoji ekvivalentinė grunto varža ρ:
           </label>
           <div class="relative w-full">
-            <p class="text-sm text-blue-700">drėgnas</p>
+            <p class="text-sm text-blue-700 text-start">{{ gruntas }}</p>
             <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
           </div>
         </div>
@@ -103,18 +103,7 @@
             Matavimo prietaiso pavadinimas ir numeris:
           </label>
           <div class="relative w-full">
-            <p class="text-sm text-blue-700">drėgnas</p>
-            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="flex items-center gap-2 mt-2">
-          <label class="text-sm shrink-0">
-            Matavimo prietaiso metrologinė patikra galioja :
-          </label>
-          <div class="relative w-full">
-            <p class="text-sm text-blue-700">drėgnas</p>
+            <p class="text-sm text-blue-700 text-start">{{ matavimoPrietaiso }}</p>
             <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
           </div>
         </div>
@@ -150,58 +139,61 @@
           </tr>
         </thead>
         <tbody>
+          {% for c in table.rows %}
           <tr>
             <td class="border border-gray-700 p-2 text-center text-blue-700">
-              1
+              {{ c.eil_nr }}
             </td>
             <td class="border border-gray-700 p-2 text-center text-blue-700">
-              100/7 - 100/13
+              {{ c.matuojamas_ruozas }}
             </td>
             <td class="border border-gray-700 p-2 text-center text-blue-700">
-              atr. 100/7
+              {{ c.matavimo_vieta }}
             </td>
             <td class="border border-gray-700 p-2 text-center text-blue-700">
-              10
+              {{ c.ismatuota }}
             </td>
             <td class="border border-gray-700 p-2 text-center text-blue-700">
-              1
+              {{ c.normine }}
             </td>
             <td class="border border-gray-700 p-2 text-center text-blue-700">
-              2
+              {{ c.ilgis }}
             </td>
             <td class="border border-gray-700 p-2 text-center text-blue-700">
-              2
+              {{ c.skirtumas }}
             </td>
           </tr>
+
+          {% endfor %}
         </tbody>
       </table>
     </section>
 
     <section>
-      <div class="flex items-center gap-2">
+      <div class="flex items-bottom gap-2">
         <p class="font-semibold">Pastaba:</p>
-        <span class="text-sm">turi būti bent vienas įžemintas ele</span>
+        <span class="text-sm text-start">{{ postaba }}</span>
       </div>
       <div class="flex items-center gap-2 mt-4">
         <p class="font-semibold">Išvada:</p>
-        <span class="text-sm">turi būti bent vienas įžemintas ele</span>
+        <span class="text-sm">{{ isvada }}</span>
       </div>
     </section>
 
     <section>
       <div class="flex items-center gap-2 mt-4">
-        <label class="text-sm shrink-0">
+        <label class="text-sm shrink-0 ">
           Asmuo, atsakingas už matavimo rezultatus
         </label>
         <div class="relative w-full">
-          <p class="text-sm text-blue-700">drėgnas</p>
+          <p class="text-sm text-blue-700 text-start">drėgnas</p>
           <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
         </div>
       </div>
       <div class="flex items-center gap-2 mt-4">
         <label class="text-sm shrink-0"> Matavimus\apžiūrą atlik </label>
         <div class="relative w-full">
-          <p class="text-sm text-blue-700">drėgnas</p>
+          <p class="text-sm text-blue-700 text-start">drėgnas</p>
           <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
         </div>
       </div>
