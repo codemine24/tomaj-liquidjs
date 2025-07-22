@@ -5,22 +5,28 @@
 // • Enter a "Total distance" value to stretch/condense the x-axis
 // • Chart updates instantly; uses Recharts for visuals, shadcn/ui for controls
 
-import React, { useCallback, useMemo, useState, useRef, useEffect } from "react";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  ResponsiveContainer,
-  Tooltip,
-} from "recharts";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Plus, Trash2, RefreshCw } from "lucide-react";
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
+import { Plus, RefreshCw, Trash2 } from "lucide-react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import {
+  CartesianGrid,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 // ---------------------------------------------------------------------
 // Types
@@ -44,12 +50,11 @@ function scaleDistances(data: Row[], total: number): Row[] {
 
 // Demo fallback data (same shape as original example)
 const DEMO: Row[] = [
-  { distance: 0, upper:0, lower: -1.2 },
+  { distance: 0, upper: 0, lower: -1.2 },
   { distance: 2, upper: 0, lower: -1.3 },
   { distance: 5, upper: 0, lower: -1.3 },
   { distance: 8, upper: 0, lower: -1.3 },
   { distance: 10, upper: 0, lower: -1.2 },
-
 ];
 
 // ---------------------------------------------------------------------
@@ -58,7 +63,8 @@ const DEMO: Row[] = [
 const STORAGE_KEY = "profileChartState";
 
 const loadInitial = (): { rows: Row[]; total: string; showUpper: boolean } => {
-  if (typeof window === "undefined") return { rows: DEMO, total: "10", showUpper: true };
+  if (typeof window === "undefined")
+    return { rows: DEMO, total: "10", showUpper: true };
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
@@ -66,7 +72,8 @@ const loadInitial = (): { rows: Row[]; total: string; showUpper: boolean } => {
       return {
         rows: Array.isArray(parsed.rows) ? parsed.rows : DEMO,
         total: typeof parsed.totalDist === "string" ? parsed.totalDist : "10",
-        showUpper: typeof parsed.showUpper === "boolean" ? parsed.showUpper : true,
+        showUpper:
+          typeof parsed.showUpper === "boolean" ? parsed.showUpper : true,
       };
     }
   } catch {
@@ -117,7 +124,7 @@ const ProfileChartApp: React.FC = () => {
   // -------------------------------------------------------------------
   const renderDot = useCallback(
     (line: "upper" | "lower") =>
-      // Recharts passes rendering props such as cx, cy, index...
+      // eslint-disable-next-line 
       (props: any) => {
         const { cx, cy, index } = props;
         return (
@@ -147,8 +154,8 @@ const ProfileChartApp: React.FC = () => {
       if (!chartRef.current || !dragging) return;
 
       const rect = chartRef.current.getBoundingClientRect();
-      const marginTop = 20; // Must match LineChart margin.top
-      const marginBottom = 20; // Must match LineChart margin.bottom
+      const marginTop = 20;
+      const marginBottom = 20;
       const height = rect.height - marginTop - marginBottom;
       if (height <= 0) return;
 
@@ -206,7 +213,9 @@ const ProfileChartApp: React.FC = () => {
   // -------------------------------------------------------------------
   const exportPng = async () => {
     if (!chartRef.current) return;
-    const canvas = await html2canvas(chartRef.current, { backgroundColor: "white" });
+    const canvas = await html2canvas(chartRef.current, {
+      backgroundColor: "white",
+    });
     const url = canvas.toDataURL("image/png");
     const link = document.createElement("a");
     link.href = url;
@@ -216,9 +225,15 @@ const ProfileChartApp: React.FC = () => {
 
   const exportPdf = async () => {
     if (!chartRef.current) return;
-    const canvas = await html2canvas(chartRef.current, { backgroundColor: "white" });
+    const canvas = await html2canvas(chartRef.current, {
+      backgroundColor: "white",
+    });
     const imgData = canvas.toDataURL("image/png");
-    const pdf = new jsPDF({ orientation: "landscape", unit: "pt", format: [canvas.width, canvas.height] });
+    const pdf = new jsPDF({
+      orientation: "landscape",
+      unit: "pt",
+      format: [canvas.width, canvas.height],
+    });
     pdf.addImage(imgData, "PNG", 0, 0, canvas.width, canvas.height);
     pdf.save("grezimas.pdf");
   };
@@ -354,16 +369,28 @@ const ProfileChartApp: React.FC = () => {
           {/* ResponsiveContainer ensures the chart scales with its parent */}
           <div ref={chartRef} className="w-full h-[400px]">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={stretched} margin={{ top: 20, right: 30, bottom: 40, left: 50 }}>
+              <LineChart
+                data={stretched}
+                margin={{ top: 20, right: 30, bottom: 40, left: 50 }}
+              >
                 <CartesianGrid strokeDasharray="3 3" strokeOpacity={0.3} />
                 <XAxis
                   dataKey="distance"
-                  label={{ value: "Distance (m)", position: "insideBottom", dy: 20 }}
+                  label={{
+                    value: "Distance (m)",
+                    position: "insideBottom",
+                    dy: 20,
+                  }}
                   tickFormatter={(v: number) => Math.round(v).toString()}
                 />
                 <YAxis
                   domain={[yMin - yPad, yMax + yPad]}
-                  label={{ value: "Depth (m)", angle: -90, position: "insideLeft", dx: -30 }}
+                  label={{
+                    value: "Depth (m)",
+                    angle: -90,
+                    position: "insideLeft",
+                    dx: -30,
+                  }}
                   tickFormatter={(v: number) => {
                     const s = v.toFixed(2);
                     return s.replace(/\.0+$/, "").replace(/(\.\d)0$/, "$1");

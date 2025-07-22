@@ -1,8 +1,12 @@
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-import DocumentGenerator from "./DocumentGenerator";
-import './App.css'
-import ProfileChartApp from './diagram';
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import { DocumentGenerator } from "./DocumentGenerator";
+import "./App.css";
+import ProfileChartApp from "./diagram";
 
 function App() {
   return (
@@ -36,4 +40,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
