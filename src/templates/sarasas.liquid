@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <title>{{ doc_id }} dokumentacija</title>
+  <!-- Tailwind CDN (swap for a compiled build in production) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'Arial', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Optional: print-friendly tweaks */
+    @media print {
+      a[href]:after{ content:""; }
+      .no-print{ display:none !important; }
+      .page-break{ page-break-after: always; }
+    }
+  </style>
+</head>
+<body class="font-sans text-sm text-gray-800 leading-relaxed bg-white p-6 md:p-10">
+
+  <header class="mb-8">
+    <h1 class="text-2xl font-semibold tracking-tight mb-2">{{ doc_id }} dokumentacija</h1>
+    <div class="text-gray-600 space-y-0.5">
+      <p><strong>{{ company.name }}</strong></p>
+      <p>{{ company.address }}</p>
+      <p><strong>{{ operator }}</strong></p>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="text-xl font-semibold mb-3">Priedai – Rangovo pateikiamų dokumentų sąrašas</h2>
+    <div class="overflow-x-auto rounded-lg shadow ring-1 ring-gray-200">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr class="text-left text-gray-700">
+            <th class="px-3 py-2 font-medium">Priedas</th>
+            <th class="px-3 py-2 font-medium">Pavadinimas</th>
+            <th class="px-3 py-2 font-medium">Vieta</th>
+            <th class="px-3 py-2 font-medium">Kodas</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100 bg-white">
+          {%- for a in annexes -%}
+          <tr class="hover:bg-gray-50">
+            <td class="px-3 py-2">{{ a.no }}</td>
+            <td class="px-3 py-2">{{ a.title }}</td>
+            <td class="px-3 py-2">{{ a.location }}</td>
+            <td class="px-3 py-2">{{ a.code }}</td>
+          </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  {%- comment -%}
+    Example of annex-specific rendering:
+    {% assign annex7 = annexes | where: "no", 7 | first %}
+    {% if annex7 %}
+      <div class="page-break mt-10"></div>
+      <section id="annex-7" class="mt-8">
+        <h2 class="text-xl font-semibold mb-3">7 priedas – Kabelių sąrašas</h2>
+        <div class="overflow-x-auto rounded-lg shadow ring-1 ring-gray-200">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr class="text-left text-gray-700">
+                <th class="px-3 py-2 font-medium">Nuo</th>
+                <th class="px-3 py-2 font-medium">Iki</th>
+                <th class="px-3 py-2 font-medium">Gyslos</th>
+                <th class="px-3 py-2 font-medium">Fazė</th>
+                <th class="px-3 py-2 font-medium">Ilgis (m)</th>
+                <th class="px-3 py-2 font-medium">Tipas</th>
+                <th class="px-3 py-2 font-medium">Įtampa</th>
+                <th class="px-3 py-2 font-medium">Skerspjūvis (mm²)</th>
+                <th class="px-3 py-2 font-medium">Gamintojas</th>
+                <th class="px-3 py-2 font-medium">Įrengimo vieta</th>
+                <th class="px-3 py-2 font-medium">Data</th>
+                <th class="px-3 py-2 font-medium">Įrengė</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+              {% for c in annex7.cables %}
+              <tr class="hover:bg-gray-50">
+                <td class="px-3 py-2">{{ c.from_joint }}</td>
+                <td class="px-3 py-2">{{ c.to_joint }}</td>
+                <td class="px-3 py-2">{{ c.cores }}</td>
+                <td class="px-3 py-2">{{ c.phase }}</td>
+                <td class="px-3 py-2">{{ c.length_m }}</td>
+                <td class="px-3 py-2">{{ c.type }}</td>
+                <td class="px-3 py-2">{{ c.voltage }}</td>
+                <td class="px-3 py-2">{{ c.cross_section_mm2 }}</td>
+                <td class="px-3 py-2">{{ c.manufacturer }}</td>
+                <td class="px-3 py-2">{{ c.installation_place }}</td>
+                <td class="px-3 py-2">{{ c.installation_date }}</td>
+                <td class="px-3 py-2">{{ c.installed_by }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    {% endif %}
+  {%- endcomment -%}
+
+  <footer class="mt-12 text-xs text-gray-500">
+    Sugeneruota: {{ "now" | date: "%Y-%m-%d %H:%M" }}
+  </footer>
+
+</body>
+</html>

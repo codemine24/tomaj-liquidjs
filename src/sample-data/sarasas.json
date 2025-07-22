@@ -1,0 +1,23 @@
+{
+  "company": {
+    "name": "UAB Energostatika",
+    "address": "Tartoko g. 5, Jašiūnai"
+  },
+  "operator": "AB ESO",
+  "doc_id": "E1N14B1179",
+  "annexes": [
+    { "no": 1, "title": "", "location": "" },
+    {
+      "no": 2,
+      "title": "2A",
+      "location": "Lapeikių vs., Sužionių sen., Vilniaus r. sav.",
+      "code": "E1N1393519"
+    },
+    {
+      "no": 2.1,
+      "title": "2A",
+      "location": "Lapeikių vs., Sužionių sen., Vilniaus r. sav.",
+      "code": "E1N1393519"
+    }
+  ]
+}
