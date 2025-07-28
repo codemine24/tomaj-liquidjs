@@ -87,32 +87,23 @@ export const DocumentGenerator: React.FC = () => {
     const printWindow = window.open("", "_blank", "width=800,height=600");
     if (!printWindow) return;
 
-    const docHtml = `<!DOCTYPE html><html><head><title>${templateName}</title>
-      <style>@media print { body { margin: 20px; } }</style>
-    </head><body><div class="print-wrapper">${previewRef.current.innerHTML}</div></body></html>`;
+    const docHtml = `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>${templateName}</title>
+        
+      </head>
+      <body>
+        <div class="print-wrapper">${previewRef.current.innerHTML}</div>
+      </body>
+    </html>
+  `;
 
     printWindow.document.open();
     printWindow.document.write(docHtml);
     printWindow.document.close();
 
-    // Rely on browser's own scaling ("Fit to page" / "Scale" option).
-    // Provide A4 print setup & margins via CSS for predictable output.
-    const style = `
-      @page { size: A4 portrait; margin: 12mm; }
-      @media print {
-        body      { zoom: 0.9; }              /* shrink everything */
-        img,svg   { max-width: 100%; height: auto; }
-        table     { width: 100%; }
-        .pagebreak{ page-break-before: always; }
-      }
-    `;
-    printWindow.document.head.appendChild(
-      Object.assign(printWindow.document.createElement("style"), {
-        textContent: style,
-      })
-    );
-
-    // Wait for content to finish loading before printing
     printWindow.addEventListener(
       "load",
       () => {
@@ -224,6 +215,11 @@ export const DocumentGenerator: React.FC = () => {
           <div
             ref={previewRef}
             className="prose max-w-none bg-white p-4 rounded-md overflow-auto border"
+            style={{
+              width: "210mm",
+              minHeight: "297mm", // Optional: Set A4 height if needed
+              margin: "0 auto", // Center horizontally
+            }}
             dangerouslySetInnerHTML={{ __html: rendered }}
           />
         </CardContent>

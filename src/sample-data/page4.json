@@ -1,10 +1,10 @@
 {
   "objektas": "Vilniaus g. Kaunas, Lietuva, E2327272",
-  "matavimo": "2025.04.17",
+  "matavimo": "4/17/25",
   "gruntas": "drėgnas",
-  "savitoji": "-",
+  "savitoji": "",
   "matavimoPrietaiso": "Metrel Eurotest 27227 gam Nr. 27227",
-  "metrologin ": "17/05/2025",
+  "metrologin": "17/05/2025",
   "header": {
     "company": "UAB Testinam",
     "location": "Vilnius, lietuva",
@@ -94,16 +94,12 @@
     "pastaba": "turi būti bent vienas įžemintas ele",
     "isvada": "turi būti bent vienas įžemintas ele"
   },
-  "signatures": [
-    {
-      "label": "Asmuo, atsakingas už matavimo rezultatus",
-      "value": "drėgnas"
-    },
-    {
-      "label": "Matavimus\\apžiūrą atlik",
-      "value": "drėgnas"
-    }
-  ], 
-  "postaba": "įžemintuvų korozinė elementų būklė oro linijose pasirinktinai tikrinama atkasant gruntą ne mažiau kaip 2 % įžemintų atramų. Šitaip tikrinti reikia tas atramas, kurios yra urbanizuotose teritorijose, ir tas vietas", 
+  "signatures": {
+    "rezultatus_pareigos": "darbų vadovas",
+    "rezultatus_pavarde": "Jonas petraitis",
+    "atliko_pareigos": "darbų vadovas",
+    "atliko_pavarde": "Jonas petraitis"
+  },
+  "postaba": "įžemintuvų korozinė elementų būklė oro linijose pasirinktinai tikrinama atkasant gruntą ne mažiau kaip 2 % įžemintų atramų. Šitaip tikrinti reikia tas atramas, kurios yra urbanizuotose teritorijose, ir tas vietas",
   "isvada": "Įžemintuvų varžos atitinka EĮĮT ir EETET reikalavimus, išskyrus įžemintuvus, kurių sąrašo Nr"
 }

@@ -14,22 +14,10 @@
         },
       };
     </script>
-    <style>
-      @media print {
-        a[href]:after {
-          content: "";
-        }
-        .no-print {
-          display: none !important;
-        }
-        .page-break {
-          page-break-after: always;
-        }
-      }
-    </style>
+    
   </head>
   <body
-    class="font-sans text-sm text-gray-800 leading-relaxed bg-white p-6 md:p-10"
+    class="w-[210mm] h-[297mm] mx-auto my-4 shadow-lg print:shadow-none print:my-0 print:mx-0"
   >
     <header class="mb-8">
       <div class="flex justify-between">
@@ -42,7 +30,7 @@
       </div>
     </header>
 
-    <section class="mb-8">
+    <section class="mb-8 ">
       <div class="mb-4">
         <h2 class="text-md font-bold text-center">
           ĮŽEMINTUVŲ ATSTOJAMŲJŲ VARŽŲ MATAVIMO IR GRANDINĖS NUO ĮŽEMINTUVŲ IKI
@@ -52,14 +40,13 @@
         <div class="flex items-center gap-2 mt-4">
           <label class="text-sm shrink-0">Objektas:</label>
           <div class="relative w-full">
-            <p class="text-sm text-blue-700 text-start">
+           <p class="text-sm text-blue-700 text-center border-b-[1px] border-black">
               {{ objektas }}
             </p>
-            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
           </div>
         </div>
 
-        <p class="text-sm font-semibold text-center mt-2">
+        <p class="text-sm font-semibold text-center">
           Įžemintuvų varžos matavimas
         </p>
       </div>
@@ -70,8 +57,7 @@
             Matavimo\apžiūros atlikimo data:</label
           >
           <div class="relative w-full">
-            <p class="text-sm text-blue-700 text-start">{{ matavimo }}</p>
-            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+            <p class="text-sm text-blue-700 text-start border-b-[1px] border-black">{{ matavimo }}</p>
           </div>
         </div>
       </div>
@@ -81,8 +67,7 @@
             Gruntas ir jo būklė matavimo metu:</label
           >
           <div class="relative w-full">
-            <p class="text-sm text-blue-700 text-start">{{ gruntas }}</p>
-            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+            <p class="text-sm text-blue-700 text-start border-b-[1px] border-black">{{ gruntas }}</p>
           </div>
         </div>
       </div>
@@ -92,8 +77,7 @@
             Savitoji ekvivalentinė grunto varža ρ:
           </label>
           <div class="relative w-full">
-            <p class="text-sm text-blue-700 text-start">{{ gruntas }}</p>
-            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+            <p class="text-sm text-blue-700 text-start border-b-[1px] border-black">{{ savitoji }}</p>
           </div>
         </div>
       </div>
@@ -103,16 +87,25 @@
             Matavimo prietaiso pavadinimas ir numeris:
           </label>
           <div class="relative w-full">
-            <p class="text-sm text-blue-700 text-start">{{ matavimoPrietaiso }}</p>
-            <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+            <p class="text-sm text-blue-700 text-start border-b-[1px] border-black">{{ matavimoPrietaiso }}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center gap-2 mt-2">
+          <label class="text-sm shrink-0">
+            Matavimo prietaiso metrologinė patikra galioja iki:
+          </label>
+          <div class="relative w-full">
+            <p class="text-sm text-blue-700 text-start border-b-[1px] border-black">{{ metrologin }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="overflow-x-auto shadow ring-1 ring-gray-200 mb-6 mt-6">
+    <section class="mb-6 mt-6 w-[760px]">
       <table class="min-w-full border-collapse border border-gray-300 text-sm">
-        <thead class="bg-gray-300">
+        <thead class="bg-[#d9d9d9]">
           <tr>
             <th rowspan="2" class="border border-gray-700 p-2 font-[300]">
               Eil. Nr.
@@ -170,7 +163,7 @@
     </section>
 
     <section>
-      <div class="flex items-bottom gap-2">
+      <div class="flex items-bottom gap-2 ">
         <p class="font-semibold">Pastaba:</p>
         <span class="text-sm text-start">{{ postaba }}</span>
       </div>
@@ -186,15 +179,23 @@
           Asmuo, atsakingas už matavimo rezultatus
         </label>
         <div class="relative w-full">
-          <p class="text-sm text-blue-700 text-start">drėgnas</p>
-          <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          <p class="absolute bottom-4 -left-90 w-full h-px text-blue-700 text-sm">{{ signatures.rezultatus_pareigos}}</p>
+          <p class="absolute bottom-4 -left-10 w-full h-px text-blue-700 text-sm">{{ signatures.rezultatus_pavarde}}</p>
+          <div class="absolute -bottom-1 w-full h-px bg-gray-600 max-w-[500px]"></div>
+          <p class="absolute -bottom-1 -left-90 w-full h-px text-xs">(pareigos)</p>
+          <p class="absolute -bottom-1 -left-10 w-full h-px text-xs">(vardas, pavardė)</p>
         </div>
       </div>
-      <div class="flex items-center gap-2 mt-4">
-        <label class="text-sm shrink-0"> Matavimus\apžiūrą atlik </label>
+      <div class="flex items-center gap-2 mt-12 mb-2">
+        <label class="text-sm shrink-0 ">
+          Asmuo, atsakingas už matavimo rezultatus
+        </label>
         <div class="relative w-full">
-          <p class="text-sm text-blue-700 text-start">drėgnas</p>
-          <div class="absolute -bottom-0.5 w-full h-px bg-gray-600"></div>
+          <p class="absolute bottom-4 -left-90 w-full h-px text-blue-700 text-sm">{{ signatures.atliko_pareigos}}</p>
+          <p class="absolute bottom-4 -left-10 w-full h-px text-blue-700 text-sm">{{ signatures.atliko_pavarde}}</p>
+          <div class="absolute -bottom-1 w-full h-px bg-gray-600 max-w-[500px]"></div>
+          <p class="absolute -bottom-1 -left-90 w-full h-px text-xs">(pareigos)</p>
+          <p class="absolute -bottom-1 -left-10 w-full h-px text-xs">(vardas, pavardė)</p>
         </div>
       </div>
     </section>
