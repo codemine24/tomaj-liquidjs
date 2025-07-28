@@ -1,0 +1,97 @@
+{
+  "objektas": "Vilniaus g. Kaunas, Lietuva, E2327272",
+  "matavimo": "4/17/25",
+  "gruntas": "drėgnas",
+  "savitoji": "",
+  "matavimoPrietaiso": "Metrel Eurotest 27227 gam Nr. 27227",
+  "metrologin": "17/05/2025",
+  "header": {
+    "company": "UAB Testinam",
+    "location": "Vilnius, lietuva",
+    "attachment": "4 priedas",
+    "logo": "AB EN"
+  },
+  "protocol": {
+    "title": "ĮŽEMINTUVŲ ATSTOJAMŲJŲ VARŽŲ MATAVIMO IR GRANDINĖS NUO ĮŽEMINTUVŲ IKI ĮŽEMINAMŲ ELEMENTŲ TIKRINIMO IR APŽIŪROS PROTOKOLAS Nr.",
+    "object": "Vilniaus g. Kaunas, Lietuva, E2327272",
+    "measurement_type": "Įžemintuvų varžos matavimas",
+    "details": [
+      {
+        "label": "Matavimo\\apžiūros atlikimo data:",
+        "value": "4/17/25"
+      },
+      {
+        "label": "Gruntas ir jo būklė matavimo metu:",
+        "value": "drėgnas"
+      },
+      {
+        "label": "Savitoji ekvivalentinė grunto varža ρ:",
+        "value": "drėgnas"
+      },
+      {
+        "label": "Matavimo prietaiso pavadinimas ir numeris:",
+        "value": "drėgnas"
+      },
+      {
+        "label": "Matavimo prietaiso metrologinė patikra galioja:",
+        "value": "drėgnas"
+      }
+    ]
+  },
+  "table": {
+    "headers": [
+      { "text": "Eil. Nr.", "rowspan": 2 },
+      { "text": "Matuojamas ruožas", "rowspan": 2 },
+      { "text": "Matavimo atsivimo vieta", "rowspan": 2 },
+      { "text": "Išeminimo atstamojo varža, Ω", "colspan": 2 },
+      { "text": "Išmatuoto ruožo ilgis, m", "rowspan": 2 },
+      {
+        "text": "Gretimu tašku matavimu rezultatų skirtumas, %",
+        "rowspan": 2
+      }
+    ],
+    "subHeaders": [{ "text": "išmatuota" }, { "text": "norminė" }],
+    "rows": [
+      {
+        "eil_nr": "1",
+        "matavimo_vieta": "atr. 100/7",
+        "ismatuota": "10",
+        "normine": "1",
+        "rezultatai": "2"
+      },
+      {
+        "eil_nr": "2",
+        "matavimo_vieta": "atr. 100/13",
+        "ismatuota": "10",
+        "normine": "1",
+        "rezultatai": "2"
+      },
+      {
+        "eil_nr": "3",
+        "matavimo_vieta": "atr. 100/20",
+        "ismatuota": "10",
+        "normine": "",
+        "rezultatai": ""
+      },
+      {
+        "eil_nr": "4",
+        "matavimo_vieta": "atr. 102/8",
+        "ismatuota": "10",
+        "normine": "",
+        "rezultatai": ""
+      }
+    ]
+  },
+  "notes": {
+    "pastaba": "turi būti bent vienas įžemintas ele",
+    "isvada": "turi būti bent vienas įžemintas ele"
+  },
+  "signatures": {
+    "rezultatus_pareigos": "darbų vadovas",
+    "rezultatus_pavarde": "Jonas petraitis",
+    "atliko_pareigos": "darbų vadovas",
+    "atliko_pavarde": "Jonas petraitis"
+  },
+  "postaba": "įžemintuvų korozinė elementų būklė oro linijose pasirinktinai tikrinama atkasant gruntą ne mažiau kaip 2 % įžemintų atramų. Šitaip tikrinti reikia tas atramas, kurios yra urbanizuotose teritorijose, ir tas vietas, kur yra agresyvus, nupučiamas ar didelės savitosios varžos gruntas, nuošliaužos. Elementas turi būti pakeistas, kai daugiau kaip 50 % jo skerspjūvio pažeista.",
+  "isvada": "Įžemintuvų varžos atitinka EĮĮT ir EETET reikalavimus, išskyrus įžemintuvus, kurių sąrašo Nr"
+}
