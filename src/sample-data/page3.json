@@ -39,18 +39,6 @@
     ]
   },
   "table": {
-    "headers": [
-      { "text": "Eil. Nr.", "rowspan": 2 },
-      { "text": "Matuojamas ruožas", "rowspan": 2 },
-      { "text": "Matavimo atsivimo vieta", "rowspan": 2 },
-      { "text": "Išeminimo atstamojo varža, Ω", "colspan": 2 },
-      { "text": "Išmatuoto ruožo ilgis, m", "rowspan": 2 },
-      {
-        "text": "Gretimu tašku matavimu rezultatų skirtumas, %",
-        "rowspan": 2
-      }
-    ],
-    "subHeaders": [{ "text": "išmatuota" }, { "text": "norminė" }],
     "rows": [
       {
         "eil_nr": "1",
